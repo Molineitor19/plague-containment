@@ -16,8 +16,9 @@ Plague Containment models a city as an 8×8 grid of districts, each assigned a f
 
 The three layers communicate exclusively through three JSON files: `state.json` (engine → all), `result.json` (algorithms → interface), and `action.json` (interface → engine).
 
-## Repository Structure
+### Repository Structure
 
+```bash
 plague-containment/
 ├── src/
 │   ├── engine/          # C++ game engine (linked list, AVL tree, plague spread)
@@ -35,6 +36,8 @@ plague-containment/
 ├── .gitignore
 ├── LICENSE
 └── README.md
+```
+---
 
 ## Team
 
