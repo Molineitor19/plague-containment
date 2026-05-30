@@ -1,16 +1,10 @@
-// ─────────────────────────────────────────────
-//  main.cpp
-//  Plague Containment — C++ Engine Tests
-//
-//  Tests the InfectionList and AVLTree structures
-//  before connecting them to the full game engine.
-// ─────────────────────────────────────────────
+──────────────────────────────────────────
 
 #include <iostream>
 #include "InfectionList.h"
 #include "AVLTree.h"
 
-// ── Helpers ──────────────────────────────────
+
 
 void printSeparator(const std::string& title) {
     std::cout << "\n══════════════════════════════════════\n";
@@ -18,7 +12,6 @@ void printSeparator(const std::string& title) {
     std::cout << "══════════════════════════════════════\n";
 }
 
-// ── Infection List Tests ──────────────────────
 
 void testInfectionList() {
     printSeparator("INFECTION LINKED LIST TESTS");
@@ -132,7 +125,7 @@ void testAVLTree() {
     }
 }
 
-// ── Main ──────────────────────────────────────
+
 
 int main() {
     std::cout << "╔════════════════════════════════════════╗\n";
