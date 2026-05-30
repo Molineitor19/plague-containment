@@ -12,7 +12,7 @@ from __future__ import annotations
 #  Constants
 # ─────────────────────────────────────────────────────────────
 
-GRID_SIZE = 8   # fixed 8×8 city grid
+GRID_SIZE = 8
 
 # District state labels — must match the JSON schema
 HEALTHY     = "healthy"
