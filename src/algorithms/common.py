@@ -2,7 +2,7 @@
 common.py  —  Plague Containment  —  Team 16
 ════════════════════════════════════════════════════════════════════════════
 Shared constants, data model, and grid utilities.
-Imported by greedy.py, backtracking.py, and algorithms.py.
+Imported by vaccination.py, quarantine.py, and algorithms.py.
 ════════════════════════════════════════════════════════════════════════════
 """
 
@@ -14,13 +14,13 @@ from __future__ import annotations
 
 GRID_SIZE = 8   # fixed 8×8 city grid
 
-# District state labels — must match the JSON schema (§VII)
+# District state labels — must match the JSON schema
 HEALTHY     = "healthy"
 INFECTED    = "infected"
 VACCINATED  = "vaccinated"
 QUARANTINED = "quarantined"
 
-# 4-connectivity: up · down · left · right  (no diagonals, §II-A)
+# 4-connectivity: up · down · left · right
 DIRECTIONS = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 
 
@@ -85,9 +85,7 @@ def build_grid(districts_data: list[dict]) -> list[list[District]]:
     return grid  # type: ignore[return-value]
 
 
-def get_neighbors(
-    grid: list[list[District]], row: int, col: int
-) -> list[District]:
+def get_neighbors(grid: list[list[District]], row: int, col: int) -> list[District]:
     """
     Return the 4-connected neighbors (up/down/left/right) of cell (row, col).
     Cells outside the 8x8 boundary are ignored.
