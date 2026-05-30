@@ -1,14 +1,5 @@
 #pragma once
 
-// ─────────────────────────────────────────────
-//  InfectionList.h
-//  Plague Containment — C++ Engine
-//
-//  Singly linked list that tracks every infected
-//  district in chronological order.
-// ─────────────────────────────────────────────
-
-// One infected district in the chain
 struct InfectionNode {
     int row;              // Row position on the 8x8 grid
     int col;              // Column position on the 8x8 grid
