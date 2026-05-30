@@ -11,7 +11,7 @@ with the highest risk level for immediate vaccination.
 from __future__ import annotations
 
 from typing import Optional
-from algorithms.common import District, INFECTED, HEALTHY, VACCINATED, GRID_SIZE, get_neighbors
+from common import District, INFECTED, HEALTHY, VACCINATED, GRID_SIZE, get_neighbors
 
 
 # ═════════════════════════════════════════════════════════════

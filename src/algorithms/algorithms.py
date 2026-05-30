@@ -18,7 +18,7 @@ from __future__ import annotations
 import json
 from typing import Optional
 
-from algorithms.common import District, build_grid
+from common import District, build_grid
 from vaccination import greedy_vaccination
 from quarantine import backtracking_quarantine
 

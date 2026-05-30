@@ -13,7 +13,7 @@ from __future__ import annotations
 
 from collections import deque
 from typing import Optional
-from algorithms.common import District, INFECTED, HEALTHY, QUARANTINED, GRID_SIZE, get_neighbors
+from common import District, INFECTED, HEALTHY, QUARANTINED, GRID_SIZE, get_neighbors
 
 
 # ─────────────────────────────────────────────────────────────
