@@ -2,10 +2,6 @@
 #include <iostream>
 #include <algorithm>
 
-// ─────────────────────────────────────────────
-//  AVLTree.cpp
-//  Plague Containment — C++ Engine
-// ─────────────────────────────────────────────
 
 AVLTree::AVLTree() : root(nullptr) {}
 

@@ -1,14 +1,5 @@
 #pragma once
 
-// ─────────────────────────────────────────────
-//  AVLTree.h
-//  Plague Containment — C++ Engine
-//
-//  Self-balancing BST that indexes every district
-//  by risk level. Used by the greedy advisor to
-//  find the highest-risk healthy border district
-//  in O(log n) time.
-// ─────────────────────────────────────────────
 
 // One district stored in the AVL tree
 struct AVLNode {
