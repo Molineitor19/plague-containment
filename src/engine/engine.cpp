@@ -250,6 +250,12 @@ int main() {
         // 1. Write current state for Python/Pygame to read
         writeStateJSON(turn);
 
+        // Write turn 1 state and stop for algorithm testing
+        if (turn == 1) {
+            std::cout << "[engine] Stopped at turn 1 for testing.\n";
+            break;
+}
+
         // 2. Read player action (written by Pygame interface)
         std::string actionType;
         int targetRow, targetCol, actionTurn;
