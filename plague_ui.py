@@ -71,10 +71,10 @@ STATE_COLORS_HI = {
     "quarantined": C_QUARANTINE_HI,
 }
 STATE_LABELS = {
-    "healthy":     "SANO",
-    "infected":    "INFECTADO",
-    "vaccinated":  "VACUNADO",
-    "quarantined": "CUARENTENA",
+    "healthy":     "HEALTHY",
+    "infected":    "INFECTED",
+    "vaccinated":  "VACCINATED",
+    "quarantined": "QUARANTINE",
 }
 
 
@@ -290,10 +290,10 @@ class PlagueUI:
         # action buttons shown when a district is selected
         bw, bh = 160, 42
         bx = PANEL_X + 10
-        self.btn_vaccinate  = Button((bx, 580, bw, bh), "💉 VACUNAR",    C_BTN_VACC, "vaccinate")
-        self.btn_quarantine = Button((bx, 630, bw, bh), "🚧 CUARENTENA", C_BTN_QUAR, "quarantine")
+        self.btn_vaccinate  = Button((bx, 580, bw, bh), "💉 VACCINATE",    C_BTN_VACC, "vaccinate")
+        self.btn_quarantine = Button((bx, 630, bw, bh), "🚧 QUARANTINE", C_BTN_QUAR, "quarantine")
         self.btn_skip       = Button((bx, 680 - bh - 4, WINDOW_W - bx - 20, bh - 6),
-                                     "⏭  PASAR TURNO", C_BTN_SKIP, "skip")
+                                     "⏭  SKIP TURN", C_BTN_SKIP, "skip")
 
         # load initial state, create demo if no file exists yet
         if not STATE_PATH.exists():
@@ -360,7 +360,7 @@ class PlagueUI:
                     capture_output=True, text=True, timeout=30
                 )
                 self.result.load(RESULT_PATH)
-                self.toasts.append(Toast("Algoritmos ejecutados", C_WIN))
+                self.toasts.append(Toast("Algorithms done", C_WIN))
             except Exception as e:
                 self.toasts.append(Toast(f"Error algoritmos: {e}", C_LOSE))
             finally:
@@ -396,7 +396,7 @@ class PlagueUI:
                     self.selected = None
                 if event.key == pygame.K_r:      # reload state manually
                     self._reload()
-                    self.toasts.append(Toast("Estado recargado"))
+                    self.toasts.append(Toast("State reloaded"))
                 if event.key == pygame.K_SPACE:  # skip turn
                     self._skip_turn()
 
@@ -431,9 +431,9 @@ class PlagueUI:
                     if action:
                         r, c = self.selected
                         self._write_action(action, r, c)
-                        label = "Vacunacion" if action == "vaccinate" else "Cuarentena"
+                        label = "Vaccination" if action == "vaccinate" else "Quarantine"
                         self.toasts.append(
-                            Toast(f"{label} aplicada en ({r},{c})", C_VACCINATED
+                            Toast(f"{label} applied on ({r},{c})", C_VACCINATED
                                   if action == "vaccinate" else C_QUARANTINE_HI)
                         )
                         self.action_taken = True
@@ -453,7 +453,7 @@ class PlagueUI:
 
     def _skip_turn(self):
         # skip turn and wait for C++ engine to write new state
-        self.toasts.append(Toast("Turno pasado", C_TEXT_DIM))
+        self.toasts.append(Toast("Turn skipped", C_TEXT_DIM))
         self.action_taken = False
         self.selected = None
 
@@ -472,9 +472,9 @@ class PlagueUI:
 
     def _draw_header(self):
         # draw title and keyboard shortcuts at the top
-        title = f"PLAGUE CONTAINMENT  —  Turno {self.state.turn}"
+        title = f"PLAGUE CONTAINMENT  —  Turn {self.state.turn}"
         draw_text(self.screen, self.font_lg, title, GRID_X, 18, C_TEXT)
-        sub = "R=recargar  |  ESPACIO=pasar turno  |  ESC=cancelar seleccion"
+        sub = "R=reload  |  SPACE=skip turn  |  ESC=cancel selection"
         draw_text(self.screen, self.font_sm, sub, GRID_X, 46, C_TEXT_DIM)
         pygame.draw.line(self.screen, C_PANEL_BORDER,
                          (GRID_X, 72), (WINDOW_W - 20, 72), 1)
@@ -528,7 +528,7 @@ class PlagueUI:
             pass
             pygame.draw.rect(self.screen, C_GREEDY_RING, rect,
                              width=3, border_radius=8)
-            draw_text_center(self.screen, self.font_sm, "VACUNAR",
+            draw_text_center(self.screen, self.font_sm, "VACCINATE",
                              rect.centerx, rect.top - 9, C_GREEDY_RING)
 
         # orange rings = backtracking quarantine plan
@@ -548,13 +548,13 @@ class PlagueUI:
         py = 95
 
         # stats section with progress bars
-        draw_text(self.screen, self.font_lg, "ESTADÍSTICAS", px, py, C_TEXT); py += 32
+        draw_text(self.screen, self.font_lg, "STATS", px, py, C_TEXT); py += 32
 
         stats_info = [
-            ("Sanos",       self.state.stats.get("total_healthy", 0),    C_HEALTHY_HI),
-            ("Infectados",  self.state.stats.get("total_infected", 0),   C_INFECTED_HI),
-            ("Vacunados",   self.state.stats.get("total_vaccinated", 0), C_VACCINATED_HI),
-            ("Cuarentena",  self.state.stats.get("total_quarantined", 0),C_QUARANTINE_HI),
+            ("Healthy",       self.state.stats.get("total_healthy", 0),    C_HEALTHY_HI),
+            ("Infected",  self.state.stats.get("total_infected", 0),   C_INFECTED_HI),
+            ("Vaccinated",   self.state.stats.get("total_vaccinated", 0), C_VACCINATED_HI),
+            ("Quarantine",  self.state.stats.get("total_quarantined", 0),C_QUARANTINE_HI),
         ]
         for label, val, color in stats_info:
             total = 64
@@ -574,21 +574,21 @@ class PlagueUI:
                          (px, py), (px + 180, py), 1); py += 12
 
         # greedy suggestion
-        draw_text(self.screen, self.font_md, "GREEDY — Vacunación", px, py, C_GREEDY_RING); py += 22
+        draw_text(self.screen, self.font_md, "GREEDY — Vaccination", px, py, C_GREEDY_RING); py += 22
         if self.result.greedy_row is not None:
             draw_text(self.screen, self.font_sm,
                       f"  Distrito ({self.result.greedy_row},{self.result.greedy_col})"
                       f"  riesgo={self.result.greedy_risk}",
                       px, py, C_TEXT); py += 18
         else:
-            draw_text(self.screen, self.font_sm, "  Sin candidatos", px, py, C_TEXT_DIM); py += 18
+            draw_text(self.screen, self.font_sm, "  No candidates", px, py, C_TEXT_DIM); py += 18
 
         py += 6
         # backtracking suggestion
-        draw_text(self.screen, self.font_md, "BACKTRACKING — Cuarentena", px, py, C_BT_RING); py += 22
+        draw_text(self.screen, self.font_md, "BACKTRACKING — Quarantine", px, py, C_BT_RING); py += 22
         if self.result.qt_found:
             draw_text(self.screen, self.font_sm,
-                      f"  Plan: {len(self.result.quarantine)} distritos",
+                      f"  Plan: {len(self.result.quarantine)} districts",
                       px, py, C_TEXT); py += 18
             coords_str = ", ".join(f"({r},{c})" for r, c in self.result.quarantine[:3])
             if len(self.result.quarantine) > 3:
@@ -596,7 +596,7 @@ class PlagueUI:
             draw_text(self.screen, self.font_sm, "  " + coords_str, px, py, C_TEXT_DIM); py += 18
         else:
             draw_text(self.screen, self.font_sm,
-                      "  No hay plan válido", px, py, C_TEXT_DIM); py += 18
+                      "  No valid plan found", px, py, C_TEXT_DIM); py += 18
 
         py += 6
         pygame.draw.line(self.screen, C_PANEL_BORDER,
@@ -607,12 +607,12 @@ class PlagueUI:
             r, c = self.selected
             dist = self.state.get(r, c)
             draw_text(self.screen, self.font_md,
-                      f"Seleccionado: ({r},{c})", px, py, C_TEXT); py += 20
+                      f"Selected: ({r},{c})", px, py, C_TEXT); py += 20
             draw_text(self.screen, self.font_sm,
-                      f"  Estado: {STATE_LABELS.get(dist['state'], dist['state'])}",
+                      f"  State: {STATE_LABELS.get(dist['state'], dist['state'])}",
                       px, py, C_TEXT_DIM); py += 16
             draw_text(self.screen, self.font_sm,
-                      f"  Riesgo: {dist['risk']}/10",
+                      f"  Risk: {dist['risk']}/10",
                       px, py, C_TEXT_DIM); py += 24
 
             if not self.action_taken:
@@ -622,9 +622,9 @@ class PlagueUI:
                 self.btn_quarantine.draw(self.screen, self.font_md)
         else:
             draw_text(self.screen, self.font_sm,
-                      "Clic en distrito SANO", px, py, C_TEXT_DIM); py += 16
+                      "Click on HEALTHY district", px, py, C_TEXT_DIM); py += 16
             draw_text(self.screen, self.font_sm,
-                      "para seleccionar accion.", px, py, C_TEXT_DIM)
+                      "to select an action.", px, py, C_TEXT_DIM)
 
         # skip button always visible at the bottom
         self.btn_skip.rect = pygame.Rect(px, WINDOW_H - 60,
@@ -636,24 +636,24 @@ class PlagueUI:
             t = int(self.tick * 4) % 4
             dots = "." * (t + 1)
             draw_text(self.screen, self.font_sm,
-                      f"Calculando algoritmos{dots}", px, WINDOW_H - 85,
+                      f"Running algorithms{dots}", px, WINDOW_H - 85,
                       C_TEXT_DIM)
 
         # color legend at the bottom of the panel
         legend_y = WINDOW_H - 170
-        draw_text(self.screen, self.font_sm, "LEYENDA:", px, legend_y, C_TEXT_DIM); legend_y += 18
-        for state, color in [("Sano", C_HEALTHY_HI),("Infectado", C_INFECTED_HI),
-                              ("Vacunado", C_VACCINATED_HI),("Cuarentena", C_QUARANTINE_HI)]:
+        draw_text(self.screen, self.font_sm, "LEGEND:", px, legend_y, C_TEXT_DIM); legend_y += 18
+        for state, color in [("Healthy", C_HEALTHY_HI),("Infected", C_INFECTED_HI),
+                              ("Vaccinated", C_VACCINATED_HI),("Quarantine", C_QUARANTINE_HI)]:
             pygame.draw.rect(self.screen, color,
                              pygame.Rect(px, legend_y + 2, 12, 12), border_radius=3)
             draw_text(self.screen, self.font_sm, state, px + 18, legend_y, C_TEXT_DIM)
             legend_y += 17
         pygame.draw.rect(self.screen, C_GREEDY_RING,
                          pygame.Rect(px, legend_y + 2, 12, 12), width=2, border_radius=3)
-        draw_text(self.screen, self.font_sm, "Greedy (vacunar)", px + 18, legend_y, C_TEXT_DIM); legend_y += 17
+        draw_text(self.screen, self.font_sm, "Greedy (vaccinate)", px + 18, legend_y, C_TEXT_DIM); legend_y += 17
         pygame.draw.rect(self.screen, C_BT_RING,
                          pygame.Rect(px, legend_y + 2, 12, 12), width=2, border_radius=3)
-        draw_text(self.screen, self.font_sm, "Backtracking (cuarentena)", px + 18, legend_y, C_TEXT_DIM)
+        draw_text(self.screen, self.font_sm, "Backtracking (quarantine)", px + 18, legend_y, C_TEXT_DIM)
 
     def _draw_particles(self):
         # draw all active particles
@@ -673,18 +673,18 @@ class PlagueUI:
         overlay.fill((0, 0, 0, 180))
         self.screen.blit(overlay, (0, 0))
         if self.state.status == "win":
-            msg   = "¡PLAGA CONTENIDA!"
+            msg   = "PLAGUE CONTAINED!"
             color = C_WIN
-            sub   = "La ciudad está a salvo."
+            sub   = "The city is safe."
         else:
-            msg   = "¡CIUDAD INFECTADA!"
+            msg   = "CITY INFECTED!"
             color = C_LOSE
-            sub   = "La plaga ganó. Fin del juego."
+            sub   = "The plague won. Game over."
         draw_text_center(self.screen, self.font_xl, msg,
                          WINDOW_W // 2, WINDOW_H // 2 - 30, color)
         draw_text_center(self.screen, self.font_lg, sub,
                          WINDOW_W // 2, WINDOW_H // 2 + 20, C_TEXT)
-        draw_text_center(self.screen, self.font_md, "Presiona ESC para salir",
+        draw_text_center(self.screen, self.font_md, "Press ESC to exit",
                          WINDOW_W // 2, WINDOW_H // 2 + 60, C_TEXT_DIM)
 
     def run(self):
