@@ -1,0 +1,718 @@
+{
+  "districts": [
+    {
+      "col": 0,
+      "risk": 3,
+      "row": 0,
+      "state": "infected"
+    },
+    {
+      "col": 1,
+      "risk": 5,
+      "row": 0,
+      "state": "infected"
+    },
+    {
+      "col": 2,
+      "risk": 2,
+      "row": 0,
+      "state": "infected"
+    },
+    {
+      "col": 3,
+      "risk": 7,
+      "row": 0,
+      "state": "infected"
+    },
+    {
+      "col": 4,
+      "risk": 4,
+      "row": 0,
+      "state": "infected"
+    },
+    {
+      "col": 5,
+      "risk": 6,
+      "row": 0,
+      "state": "infected"
+    },
+    {
+      "col": 6,
+      "risk": 1,
+      "row": 0,
+      "state": "infected"
+    },
+    {
+      "col": 7,
+      "risk": 3,
+      "row": 0,
+      "state": "infected"
+    },
+    {
+      "col": 0,
+      "risk": 4,
+      "row": 1,
+      "state": "infected"
+    },
+    {
+      "col": 1,
+      "risk": 6,
+      "row": 1,
+      "state": "infected"
+    },
+    {
+      "col": 2,
+      "risk": 8,
+      "row": 1,
+      "state": "infected"
+    },
+    {
+      "col": 3,
+      "risk": 5,
+      "row": 1,
+      "state": "infected"
+    },
+    {
+      "col": 4,
+      "risk": 3,
+      "row": 1,
+      "state": "infected"
+    },
+    {
+      "col": 5,
+      "risk": 7,
+      "row": 1,
+      "state": "infected"
+    },
+    {
+      "col": 6,
+      "risk": 2,
+      "row": 1,
+      "state": "infected"
+    },
+    {
+      "col": 7,
+      "risk": 5,
+      "row": 1,
+      "state": "infected"
+    },
+    {
+      "col": 0,
+      "risk": 2,
+      "row": 2,
+      "state": "infected"
+    },
+    {
+      "col": 1,
+      "risk": 4,
+      "row": 2,
+      "state": "infected"
+    },
+    {
+      "col": 2,
+      "risk": 6,
+      "row": 2,
+      "state": "infected"
+    },
+    {
+      "col": 3,
+      "risk": 8,
+      "row": 2,
+      "state": "infected"
+    },
+    {
+      "col": 4,
+      "risk": 9,
+      "row": 2,
+      "state": "infected"
+    },
+    {
+      "col": 5,
+      "risk": 7,
+      "row": 2,
+      "state": "infected"
+    },
+    {
+      "col": 6,
+      "risk": 3,
+      "row": 2,
+      "state": "infected"
+    },
+    {
+      "col": 7,
+      "risk": 4,
+      "row": 2,
+      "state": "infected"
+    },
+    {
+      "col": 0,
+      "risk": 5,
+      "row": 3,
+      "state": "infected"
+    },
+    {
+      "col": 1,
+      "risk": 3,
+      "row": 3,
+      "state": "infected"
+    },
+    {
+      "col": 2,
+      "risk": 4,
+      "row": 3,
+      "state": "infected"
+    },
+    {
+      "col": 3,
+      "risk": 7,
+      "row": 3,
+      "state": "infected"
+    },
+    {
+      "col": 4,
+      "risk": 6,
+      "row": 3,
+      "state": "infected"
+    },
+    {
+      "col": 5,
+      "risk": 5,
+      "row": 3,
+      "state": "infected"
+    },
+    {
+      "col": 6,
+      "risk": 8,
+      "row": 3,
+      "state": "infected"
+    },
+    {
+      "col": 7,
+      "risk": 2,
+      "row": 3,
+      "state": "infected"
+    },
+    {
+      "col": 0,
+      "risk": 6,
+      "row": 4,
+      "state": "infected"
+    },
+    {
+      "col": 1,
+      "risk": 7,
+      "row": 4,
+      "state": "infected"
+    },
+    {
+      "col": 2,
+      "risk": 8,
+      "row": 4,
+      "state": "infected"
+    },
+    {
+      "col": 3,
+      "risk": 9,
+      "row": 4,
+      "state": "infected"
+    },
+    {
+      "col": 4,
+      "risk": 10,
+      "row": 4,
+      "state": "infected"
+    },
+    {
+      "col": 5,
+      "risk": 1,
+      "row": 4,
+      "state": "infected"
+    },
+    {
+      "col": 6,
+      "risk": 2,
+      "row": 4,
+      "state": "infected"
+    },
+    {
+      "col": 7,
+      "risk": 3,
+      "row": 4,
+      "state": "infected"
+    },
+    {
+      "col": 0,
+      "risk": 4,
+      "row": 5,
+      "state": "infected"
+    },
+    {
+      "col": 1,
+      "risk": 5,
+      "row": 5,
+      "state": "infected"
+    },
+    {
+      "col": 2,
+      "risk": 6,
+      "row": 5,
+      "state": "infected"
+    },
+    {
+      "col": 3,
+      "risk": 7,
+      "row": 5,
+      "state": "infected"
+    },
+    {
+      "col": 4,
+      "risk": 8,
+      "row": 5,
+      "state": "infected"
+    },
+    {
+      "col": 5,
+      "risk": 9,
+      "row": 5,
+      "state": "infected"
+    },
+    {
+      "col": 6,
+      "risk": 10,
+      "row": 5,
+      "state": "infected"
+    },
+    {
+      "col": 7,
+      "risk": 1,
+      "row": 5,
+      "state": "infected"
+    },
+    {
+      "col": 0,
+      "risk": 2,
+      "row": 6,
+      "state": "infected"
+    },
+    {
+      "col": 1,
+      "risk": 3,
+      "row": 6,
+      "state": "infected"
+    },
+    {
+      "col": 2,
+      "risk": 4,
+      "row": 6,
+      "state": "infected"
+    },
+    {
+      "col": 3,
+      "risk": 5,
+      "row": 6,
+      "state": "infected"
+    },
+    {
+      "col": 4,
+      "risk": 6,
+      "row": 6,
+      "state": "infected"
+    },
+    {
+      "col": 5,
+      "risk": 7,
+      "row": 6,
+      "state": "infected"
+    },
+    {
+      "col": 6,
+      "risk": 8,
+      "row": 6,
+      "state": "infected"
+    },
+    {
+      "col": 7,
+      "risk": 9,
+      "row": 6,
+      "state": "infected"
+    },
+    {
+      "col": 0,
+      "risk": 10,
+      "row": 7,
+      "state": "infected"
+    },
+    {
+      "col": 1,
+      "risk": 1,
+      "row": 7,
+      "state": "infected"
+    },
+    {
+      "col": 2,
+      "risk": 2,
+      "row": 7,
+      "state": "infected"
+    },
+    {
+      "col": 3,
+      "risk": 3,
+      "row": 7,
+      "state": "infected"
+    },
+    {
+      "col": 4,
+      "risk": 4,
+      "row": 7,
+      "state": "infected"
+    },
+    {
+      "col": 5,
+      "risk": 5,
+      "row": 7,
+      "state": "infected"
+    },
+    {
+      "col": 6,
+      "risk": 6,
+      "row": 7,
+      "state": "infected"
+    },
+    {
+      "col": 7,
+      "risk": 7,
+      "row": 7,
+      "state": "infected"
+    }
+  ],
+  "grid_size": 8,
+  "infection_chain": [
+    {
+      "col": 4,
+      "row": 3,
+      "turn_infected": 1
+    },
+    {
+      "col": 4,
+      "row": 2,
+      "turn_infected": 1
+    },
+    {
+      "col": 4,
+      "row": 4,
+      "turn_infected": 1
+    },
+    {
+      "col": 3,
+      "row": 3,
+      "turn_infected": 1
+    },
+    {
+      "col": 5,
+      "row": 3,
+      "turn_infected": 1
+    },
+    {
+      "col": 4,
+      "row": 1,
+      "turn_infected": 2
+    },
+    {
+      "col": 3,
+      "row": 2,
+      "turn_infected": 2
+    },
+    {
+      "col": 5,
+      "row": 2,
+      "turn_infected": 2
+    },
+    {
+      "col": 4,
+      "row": 5,
+      "turn_infected": 2
+    },
+    {
+      "col": 3,
+      "row": 4,
+      "turn_infected": 2
+    },
+    {
+      "col": 5,
+      "row": 4,
+      "turn_infected": 2
+    },
+    {
+      "col": 2,
+      "row": 3,
+      "turn_infected": 2
+    },
+    {
+      "col": 6,
+      "row": 3,
+      "turn_infected": 2
+    },
+    {
+      "col": 4,
+      "row": 0,
+      "turn_infected": 3
+    },
+    {
+      "col": 3,
+      "row": 1,
+      "turn_infected": 3
+    },
+    {
+      "col": 5,
+      "row": 1,
+      "turn_infected": 3
+    },
+    {
+      "col": 2,
+      "row": 2,
+      "turn_infected": 3
+    },
+    {
+      "col": 6,
+      "row": 2,
+      "turn_infected": 3
+    },
+    {
+      "col": 4,
+      "row": 6,
+      "turn_infected": 3
+    },
+    {
+      "col": 3,
+      "row": 5,
+      "turn_infected": 3
+    },
+    {
+      "col": 5,
+      "row": 5,
+      "turn_infected": 3
+    },
+    {
+      "col": 2,
+      "row": 4,
+      "turn_infected": 3
+    },
+    {
+      "col": 6,
+      "row": 4,
+      "turn_infected": 3
+    },
+    {
+      "col": 1,
+      "row": 3,
+      "turn_infected": 3
+    },
+    {
+      "col": 7,
+      "row": 3,
+      "turn_infected": 3
+    },
+    {
+      "col": 3,
+      "row": 0,
+      "turn_infected": 4
+    },
+    {
+      "col": 5,
+      "row": 0,
+      "turn_infected": 4
+    },
+    {
+      "col": 2,
+      "row": 1,
+      "turn_infected": 4
+    },
+    {
+      "col": 6,
+      "row": 1,
+      "turn_infected": 4
+    },
+    {
+      "col": 1,
+      "row": 2,
+      "turn_infected": 4
+    },
+    {
+      "col": 7,
+      "row": 2,
+      "turn_infected": 4
+    },
+    {
+      "col": 4,
+      "row": 7,
+      "turn_infected": 4
+    },
+    {
+      "col": 3,
+      "row": 6,
+      "turn_infected": 4
+    },
+    {
+      "col": 5,
+      "row": 6,
+      "turn_infected": 4
+    },
+    {
+      "col": 2,
+      "row": 5,
+      "turn_infected": 4
+    },
+    {
+      "col": 6,
+      "row": 5,
+      "turn_infected": 4
+    },
+    {
+      "col": 1,
+      "row": 4,
+      "turn_infected": 4
+    },
+    {
+      "col": 7,
+      "row": 4,
+      "turn_infected": 4
+    },
+    {
+      "col": 0,
+      "row": 3,
+      "turn_infected": 4
+    },
+    {
+      "col": 2,
+      "row": 0,
+      "turn_infected": 5
+    },
+    {
+      "col": 6,
+      "row": 0,
+      "turn_infected": 5
+    },
+    {
+      "col": 1,
+      "row": 1,
+      "turn_infected": 5
+    },
+    {
+      "col": 7,
+      "row": 1,
+      "turn_infected": 5
+    },
+    {
+      "col": 0,
+      "row": 2,
+      "turn_infected": 5
+    },
+    {
+      "col": 3,
+      "row": 7,
+      "turn_infected": 5
+    },
+    {
+      "col": 5,
+      "row": 7,
+      "turn_infected": 5
+    },
+    {
+      "col": 2,
+      "row": 6,
+      "turn_infected": 5
+    },
+    {
+      "col": 6,
+      "row": 6,
+      "turn_infected": 5
+    },
+    {
+      "col": 1,
+      "row": 5,
+      "turn_infected": 5
+    },
+    {
+      "col": 7,
+      "row": 5,
+      "turn_infected": 5
+    },
+    {
+      "col": 0,
+      "row": 4,
+      "turn_infected": 5
+    },
+    {
+      "col": 1,
+      "row": 0,
+      "turn_infected": 6
+    },
+    {
+      "col": 7,
+      "row": 0,
+      "turn_infected": 6
+    },
+    {
+      "col": 0,
+      "row": 1,
+      "turn_infected": 6
+    },
+    {
+      "col": 2,
+      "row": 7,
+      "turn_infected": 6
+    },
+    {
+      "col": 6,
+      "row": 7,
+      "turn_infected": 6
+    },
+    {
+      "col": 1,
+      "row": 6,
+      "turn_infected": 6
+    },
+    {
+      "col": 7,
+      "row": 6,
+      "turn_infected": 6
+    },
+    {
+      "col": 0,
+      "row": 5,
+      "turn_infected": 6
+    },
+    {
+      "col": 0,
+      "row": 0,
+      "turn_infected": 7
+    },
+    {
+      "col": 1,
+      "row": 7,
+      "turn_infected": 7
+    },
+    {
+      "col": 7,
+      "row": 7,
+      "turn_infected": 7
+    },
+    {
+      "col": 0,
+      "row": 6,
+      "turn_infected": 7
+    },
+    {
+      "col": 0,
+      "row": 7,
+      "turn_infected": 8
+    }
+  ],
+  "stats": {
+    "total_healthy": 0,
+    "total_infected": 64,
+    "total_quarantined": 0,
+    "total_vaccinated": 0
+  },
+  "turn": 8
+}
