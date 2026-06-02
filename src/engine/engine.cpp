@@ -13,6 +13,7 @@
 #include "json.hpp"
 #include "InfectionList.h"
 #include "AVLTree.h"
+#include <windows.h>
 
 using json = nlohmann::json;
 
@@ -140,7 +141,7 @@ void writeStateJSON(int turn) {
         {"total_healthy",     totalHealthy}
     };
 
-    std::ofstream file("../../data/samples/state.json");
+    std::ofstream file("../interface/state.json");
     file << j.dump(2);
     file.close();
     std::cout << "[engine] state.json written (turn " << turn << ")\n";
@@ -149,7 +150,7 @@ void writeStateJSON(int turn) {
 // Read the player action from action.json
 // Returns false if the file does not exist yet
 bool readActionJSON(std::string& actionType, int& targetRow, int& targetCol, int& turn) {
-    std::ifstream file("../../../data/samples/action.json");
+    std::ifstream file("../interface/action.json");
     if (!file.is_open()) return false;
 
     json j;
@@ -250,34 +251,34 @@ int main() {
         // 1. Write current state for Python/Pygame to read
         writeStateJSON(turn);
 
-        // Write turn 1 state and stop for algorithm testing
-        if (turn == 1) {
-            std::cout << "[engine] Stopped at turn 1 for testing.\n";
-            break;
-}
+        // 2. Wait for player action from Pygame
+        std::cout << "[engine] Waiting for action.json...\n";
+        while (!std::ifstream("../interface/action.json").good()) {
+            Sleep(500);
+        }
+        Sleep(200);
 
-        // 2. Read player action (written by Pygame interface)
+        // 3. Read and apply player action
         std::string actionType;
         int targetRow, targetCol, actionTurn;
         if (readActionJSON(actionType, targetRow, targetCol, actionTurn)) {
-            if (actionTurn == turn) {
-                applyAction(actionType, targetRow, targetCol);
-            }
+            applyAction(actionType, targetRow, targetCol);
+            std::remove("../interface/action.json");
         } else {
-            std::cout << "[engine] No action.json found — skipping action.\n";
+            std::cout << "[engine] No action found — skipping.\n";
         }
 
-        // 3. Spread the plague
+        // 4. Spread the plague
         spreadPlague(turn);
 
-        // 4. Check win/lose
+        // 5. Check win/lose
         std::string status = checkGameStatus();
         if (status == "win") {
-            std::cout << "\n[engine] *** PLAYER WINS — plague contained! ***\n";
+            std::cout << "\n[engine] *** PLAYER WINS ***\n";
             writeStateJSON(turn);
             break;
         } else if (status == "lose") {
-            std::cout << "\n[engine] *** GAME OVER — city fully infected! ***\n";
+            std::cout << "\n[engine] *** GAME OVER ***\n";
             writeStateJSON(turn);
             break;
         }
