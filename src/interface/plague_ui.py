@@ -698,21 +698,20 @@ class PlagueUI:
         print(f"[UI] result.json -> {RESULT_PATH}")
         print(f"[UI] action.json -> {ACTION_PATH}")
 
-        # run algorithms once at startup
         self._run_algorithms()
 
-        last_mtime   = 0
-        running      = True
+        last_mtime = 0
+        running = True
 
         while running:
             dt = self.clock.tick(FPS) / 1000.0
             self.tick += dt
 
-            # check if state.json changed on disk (C++ engine wrote a new turn)
             try:
                 mtime = os.path.getmtime(STATE_PATH)
-                if mtime != last_mtime:
+                if mtime != last_mtime and (self.tick - getattr(self, '_last_reload_tick', 0)) > 0.5:
                     last_mtime = mtime
+                    self._last_reload_tick = self.tick
                     self.state.load(STATE_PATH)
                     self._spawn_particles()
                     self._run_algorithms()
@@ -720,14 +719,11 @@ class PlagueUI:
             except:
                 pass
 
-            # update particles and toasts each frame
             self.particles = [p for p in self.particles if p.update()]
             self.toasts = [t for t in self.toasts if t.update(dt)]
 
-            # handle input
             running = self.handle_events()
 
-            # draw everything
             self.draw()
 
         pygame.quit()
