@@ -73,9 +73,13 @@ void spreadPlague(int currentTurn) {
     InfectionNode* node = infectionChain.getHead();
     while (node != nullptr) {
         for (auto [nr, nc] : neighbors(node->row, node->col)) {
-            if (grid[nr][nc].state == HEALTHY) {
-                newlyInfected.push_back({nr, nc});
-            }
+           if (grid[nr][nc].state == HEALTHY) {
+    // Spread probability based on neighbor risk level
+    int chance = 30 + grid[nr][nc].risk * 5; // 35% to 80%
+    if ((rand() % 100) < chance) {
+        newlyInfected.push_back({nr, nc});
+    }
+}
         }
         node = node->next;
     }
