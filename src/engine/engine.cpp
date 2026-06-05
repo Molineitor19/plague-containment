@@ -225,12 +225,16 @@ void initGrid() {
         }
     }
 
-    // Seed infection: district (3,4) starts infected on turn 1
-    grid[3][4].state = INFECTED;
-    infectionChain.append(3, 4, 1);
-    riskTree.remove(RISK_MAP[3][4], 3, 4);
+   // Random seed infection
+srand(static_cast<unsigned int>(time(nullptr)));
+int startR = 2 + rand() % 5;  // between 2 and 6
+int startC = 2 + rand() % 5;
+grid[startR][startC].state = INFECTED;
+infectionChain.append(startR, startC, 1);
+riskTree.remove(RISK_MAP[startR][startC], startR, startC);
 
-    std::cout << "[engine] Grid initialized. Initial infection at (3,4).\n";
+std::cout << "[engine] Grid initialized. Initial infection at ("
+          << startR << "," << startC << ").\n";
 }
 
 // ── Main loop ─────────────────────────────────
