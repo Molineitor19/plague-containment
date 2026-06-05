@@ -14,6 +14,8 @@
 #include "InfectionList.h"
 #include "AVLTree.h"
 #include <windows.h>
+#include <cstdlib>
+#include <ctime>
 
 using json = nlohmann::json;
 
