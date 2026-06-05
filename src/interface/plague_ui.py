@@ -317,11 +317,11 @@ class PlagueUI:
             [10,1,2,3,4,5,6,7],
         ]
         districts = []
+        import random
+        infected_r = random.randint(1, 6)
+        infected_c = random.randint(1, 6)
         for r in range(8):
             for c in range(8):
-                import random
-                infected_r = random.randint(1, 6)
-                infected_c = random.randint(1, 6)
                 state = "infected" if (r == infected_r and c == infected_c) else "healthy"
                 districts.append({"row": r, "col": c,
                                   "risk": RISK_MAP[r][c], "state": state})
@@ -373,7 +373,6 @@ class PlagueUI:
         threading.Thread(target=_task, daemon=True).start()
 
     def _write_action(self, action_type, row, col):
-        # write the player action to action.json so the C++ engine can read it
         data = {
             "action_type": action_type,
             "target": {"row": row, "col": col},
@@ -382,6 +381,8 @@ class PlagueUI:
         with open(ACTION_PATH, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2)
         print(f"[UI] action.json -> {action_type} ({row},{col}) turn {self.state.turn}")
+    # Re-run algorithms after action so suggestions update
+        self._run_algorithms()
 
     def _reload(self):
         # reload state and results from disk

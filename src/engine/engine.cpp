@@ -14,6 +14,8 @@
 #include "InfectionList.h"
 #include "AVLTree.h"
 #include <windows.h>
+#include <cstdlib>
+#include <ctime>
 
 using json = nlohmann::json;
 
@@ -71,9 +73,13 @@ void spreadPlague(int currentTurn) {
     InfectionNode* node = infectionChain.getHead();
     while (node != nullptr) {
         for (auto [nr, nc] : neighbors(node->row, node->col)) {
-            if (grid[nr][nc].state == HEALTHY) {
-                newlyInfected.push_back({nr, nc});
-            }
+           if (grid[nr][nc].state == HEALTHY) {
+                // Spread probability based on neighbor risk level
+                int chance = 30 + grid[nr][nc].risk * 5; // 35% to 80%
+                if ((rand() % 100) < chance) {
+                    newlyInfected.push_back({nr, nc});
+    }
+}
         }
         node = node->next;
     }
@@ -225,12 +231,16 @@ void initGrid() {
         }
     }
 
-    // Seed infection: district (3,4) starts infected on turn 1
-    grid[3][4].state = INFECTED;
-    infectionChain.append(3, 4, 1);
-    riskTree.remove(RISK_MAP[3][4], 3, 4);
+    // Random seed infection
+srand(static_cast<unsigned int>(time(nullptr)));
+int startR = 2 + rand() % 5;  // between 2 and 6
+int startC = 2 + rand() % 5;
+grid[startR][startC].state = INFECTED;
+infectionChain.append(startR, startC, 1);
+riskTree.remove(RISK_MAP[startR][startC], startR, startC);
 
-    std::cout << "[engine] Grid initialized. Initial infection at (3,4).\n";
+std::cout << "[engine] Grid initialized. Initial infection at ("
+          << startR << "," << startC << ").\n";
 }
 
 // ── Main loop ─────────────────────────────────
