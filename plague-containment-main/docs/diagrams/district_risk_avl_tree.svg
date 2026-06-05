@@ -1,0 +1,93 @@
+<svg width="100%" viewBox="0 0 860 520" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>District-Risk AVL Tree</title>
+  <desc>AVL tree indexing districts by risk level. Each node shows risk, position, and height.</desc>
+
+  <rect width="860" height="520" fill="white"/>
+
+  <!-- Title -->
+  <text font-family="monospace" font-size="14" font-weight="bold" x="360" y="28" text-anchor="middle" fill="black">District-Risk AVL Tree</text>
+
+  <!-- EDGES -->
+  <line x1="360" y1="95" x2="210" y2="165" stroke="black" stroke-width="1"/>
+  <line x1="360" y1="95" x2="510" y2="165" stroke="black" stroke-width="1"/>
+  <line x1="210" y1="195" x2="120" y2="265" stroke="black" stroke-width="1"/>
+  <line x1="210" y1="195" x2="300" y2="265" stroke="black" stroke-width="1"/>
+  <line x1="510" y1="195" x2="430" y2="265" stroke="black" stroke-width="1"/>
+  <line x1="510" y1="195" x2="600" y2="265" stroke="black" stroke-width="1"/>
+  <line x1="120" y1="295" x2="70" y2="365" stroke="black" stroke-width="1"/>
+  <line x1="300" y1="295" x2="255" y2="365" stroke="black" stroke-width="1"/>
+
+  <!-- ROOT: risk=7 -->
+  <rect x="310" y="50" width="100" height="60" fill="white" stroke="black" stroke-width="1.5"/>
+  <text font-family="monospace" font-size="12" font-weight="bold" x="360" y="70" text-anchor="middle" fill="black">risk: 7</text>
+  <line x1="310" y1="75" x2="410" y2="75" stroke="black" stroke-width="0.8"/>
+  <text font-family="monospace" font-size="10" x="360" y="89" text-anchor="middle" fill="black">(2,5)  h=3</text>
+
+  <!-- LEFT: risk=4 -->
+  <rect x="160" y="165" width="100" height="60" fill="white" stroke="black" stroke-width="1.2"/>
+  <text font-family="monospace" font-size="12" font-weight="bold" x="210" y="185" text-anchor="middle" fill="black">risk: 4</text>
+  <line x1="160" y1="190" x2="260" y2="190" stroke="black" stroke-width="0.8"/>
+  <text font-family="monospace" font-size="10" x="210" y="204" text-anchor="middle" fill="black">(5,1)  h=2</text>
+
+  <!-- RIGHT: risk=9 -->
+  <rect x="460" y="165" width="100" height="60" fill="white" stroke="black" stroke-width="1.2"/>
+  <text font-family="monospace" font-size="12" font-weight="bold" x="510" y="185" text-anchor="middle" fill="black">risk: 9</text>
+  <line x1="460" y1="190" x2="560" y2="190" stroke="black" stroke-width="0.8"/>
+  <text font-family="monospace" font-size="10" x="510" y="204" text-anchor="middle" fill="black">(0,7)  h=2</text>
+
+  <!-- LEFT-LEFT: risk=2 -->
+  <rect x="70" y="265" width="100" height="60" fill="white" stroke="black" stroke-width="1"/>
+  <text font-family="monospace" font-size="12" font-weight="bold" x="120" y="285" text-anchor="middle" fill="black">risk: 2</text>
+  <line x1="70" y1="290" x2="170" y2="290" stroke="black" stroke-width="0.8"/>
+  <text font-family="monospace" font-size="10" x="120" y="304" text-anchor="middle" fill="black">(7,3)  h=1</text>
+
+  <!-- LEFT-RIGHT: risk=6 -->
+  <rect x="250" y="265" width="100" height="60" fill="white" stroke="black" stroke-width="1"/>
+  <text font-family="monospace" font-size="12" font-weight="bold" x="300" y="285" text-anchor="middle" fill="black">risk: 6</text>
+  <line x1="250" y1="290" x2="350" y2="290" stroke="black" stroke-width="0.8"/>
+  <text font-family="monospace" font-size="10" x="300" y="304" text-anchor="middle" fill="black">(1,2)  h=1</text>
+
+  <!-- RIGHT-LEFT: risk=8 -->
+  <rect x="380" y="265" width="100" height="60" fill="white" stroke="black" stroke-width="1"/>
+  <text font-family="monospace" font-size="12" font-weight="bold" x="430" y="285" text-anchor="middle" fill="black">risk: 8</text>
+  <line x1="380" y1="290" x2="480" y2="290" stroke="black" stroke-width="0.8"/>
+  <text font-family="monospace" font-size="10" x="430" y="304" text-anchor="middle" fill="black">(4,6)  h=1</text>
+
+  <!-- RIGHT-RIGHT: risk=10 -->
+  <rect x="550" y="265" width="100" height="60" fill="white" stroke="black" stroke-width="1"/>
+  <text font-family="monospace" font-size="12" font-weight="bold" x="600" y="285" text-anchor="middle" fill="black">risk: 10</text>
+  <line x1="550" y1="290" x2="650" y2="290" stroke="black" stroke-width="0.8"/>
+  <text font-family="monospace" font-size="10" x="600" y="304" text-anchor="middle" fill="black">(3,0)  h=1</text>
+
+  <!-- LEFT-LEFT-RIGHT: risk=3 -->
+  <rect x="20" y="365" width="100" height="60" fill="white" stroke="black" stroke-width="1"/>
+  <text font-family="monospace" font-size="12" font-weight="bold" x="70" y="385" text-anchor="middle" fill="black">risk: 3</text>
+  <line x1="20" y1="390" x2="120" y2="390" stroke="black" stroke-width="0.8"/>
+  <text font-family="monospace" font-size="10" x="70" y="404" text-anchor="middle" fill="black">(6,7)  h=0</text>
+
+  <!-- LEFT-RIGHT-LEFT: risk=5 -->
+  <rect x="205" y="365" width="100" height="60" fill="white" stroke="black" stroke-width="1"/>
+  <text font-family="monospace" font-size="12" font-weight="bold" x="255" y="385" text-anchor="middle" fill="black">risk: 5</text>
+  <line x1="205" y1="390" x2="305" y2="390" stroke="black" stroke-width="0.8"/>
+  <text font-family="monospace" font-size="10" x="255" y="404" text-anchor="middle" fill="black">(2,4)  h=0</text>
+
+  <!-- Balance factors -->
+  <text font-family="monospace" font-size="9" x="415" y="58" fill="black">bf=0</text>
+  <text font-family="monospace" font-size="9" x="265" y="173" fill="black">bf=0</text>
+  <text font-family="monospace" font-size="9" x="565" y="173" fill="black">bf=0</text>
+  <text font-family="monospace" font-size="9" x="175" y="273" fill="black">bf=-1</text>
+  <text font-family="monospace" font-size="9" x="355" y="273" fill="black">bf=1</text>
+  <text font-family="monospace" font-size="9" x="485" y="273" fill="black">bf=0</text>
+  <text font-family="monospace" font-size="9" x="655" y="273" fill="black">bf=0</text>
+
+  <!-- Max annotation -->
+  <text font-family="monospace" font-size="10" x="690" y="255" fill="black">← max risk</text>
+  <text font-family="monospace" font-size="10" x="690" y="272" fill="black">  (greedy</text>
+  <text font-family="monospace" font-size="10" x="690" y="289" fill="black">   target)</text>
+
+  <!-- Legend -->
+  <rect x="20" y="450" width="680" height="55" fill="white" stroke="black" stroke-width="0.6" stroke-dasharray="3 3"/>
+  <text font-family="monospace" font-size="10" font-weight="bold" x="36" y="468" fill="black">Legend:</text>
+  <text font-family="monospace" font-size="10" x="36" y="483" fill="black">risk: key used for ordering  ·  (row,col): district position  ·  h: node height  ·  bf: balance factor (left_h - right_h)</text>
+  <text font-family="monospace" font-size="10" x="36" y="497" fill="black">AVL property: |bf| &lt;= 1 for every node  ·  Max risk always found at rightmost node  ·  Search: O(log n)</text>
+</svg>

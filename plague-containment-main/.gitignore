@@ -1,0 +1,41 @@
+# C++
+*.o
+*.out
+*.exe
+*.dll
+*.so
+*.a
+build/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+env/
+venv/
+*.egg-info/
+dist/
+
+# Pygame / runtime
+*.log
+*.tmp
+
+# JSON runtime files (generated at runtime, not source)
+data/runtime/state.json
+data/runtime/result.json
+data/runtime/action.json
+
+# IDEs
+.vscode/
+.idea/
+*.suo
+*.user
+
+# OS
+.DS_Store
+Thumbs.db
